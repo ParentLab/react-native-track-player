@@ -512,7 +512,7 @@ public class MusicModule extends ReactContextBaseJavaModule implements ServiceCo
         if(isBinderReady()) {
             binder.post(() -> {
                 if (binder == null) {
-                    callback.resolve(new ArrayList());
+                    callback.resolve(Arguments.fromList(new ArrayList()));
                     return;
                 }
                 List queue = new ArrayList();
@@ -525,7 +525,7 @@ public class MusicModule extends ReactContextBaseJavaModule implements ServiceCo
                 callback.resolve(Arguments.fromList(queue));
             });
         } else {
-            callback.resolve(new ArrayList());
+            callback.resolve(Arguments.fromList(new ArrayList()));
         }
     }
 
